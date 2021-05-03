@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jsteroids</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app.css" />
 </head>
+
 <body>
     <div id="gameboard">
-        <div id="player">
-        </div>
+        <div id="player"></div>
         <div class="asteroid">
-            <svg width="100%" height="100%" viewBox="0 0 483 434" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+            <svg width="100%" height="100%" viewBox="0 0 483 434" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+                style="
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-miterlimit: 1.5;
+          ">
                 <g transform="matrix(1,0,0,1,-801.111,-718.962)">
-                    <path d="M861.48,930.258L816.736,816.284L862.643,749.353L1012.23,784.08L1140.79,734.587L1251.41,842.007L1239.98,959.716L1267.85,1071.41L1167.45,1136.92L1037.34,1089.22L869.259,1094.81L828.967,992.612L861.48,930.258Z" style="fill:black;stroke:white;stroke-width:15px;"/>
+                    <path
+                        d="M861.48,930.258L816.736,816.284L862.643,749.353L1012.23,784.08L1140.79,734.587L1251.41,842.007L1239.98,959.716L1267.85,1071.41L1167.45,1136.92L1037.34,1089.22L869.259,1094.81L828.967,992.612L861.48,930.258Z"
+                        style="fill: black; stroke: white; stroke-width: 15px" />
                 </g>
             </svg>
         </div>
     </div>
+    <template id="bullet-template">
+        <bullet class="bullet" max="100"></progress>
+    </template>
     <script src="js/vendor/extend.js"></script>
+    <script src="/js/utilities.js"></script>
+    <script src="/js/bullet.js"></script>
     <script src="/js/player.js"></script>
     <script src="/js/app.js"></script>
 </body>
+
 </html>

@@ -4,6 +4,7 @@ J.App = {
     AsteroidPosition: 0,
     AsteroidDirection: 1,
     PressedKeys: [],
+    Element_GameBoard: document.getElementById("gameboard"),
 
     ClientLoop: function () {
         J.App.AsteroidPosition += J.App.AsteroidDirection;
@@ -15,6 +16,7 @@ J.App = {
         document.getElementsByClassName('asteroid')[0].style.left = J.App.AsteroidPosition + 'px';
 
         J.Player.UpdatePosition();
+        J.Player.DrawBullets();
     },
 
     SetupControls: function () {

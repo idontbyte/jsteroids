@@ -21,7 +21,7 @@ body {
 #player.thrust:before {
     content: '';
     position: absolute;
-    left: -9px;
+    left: -10px;
     top: 40px;
     width: 0;
     height: 0;
@@ -30,6 +30,12 @@ body {
     border-left-width: 10px;
     border-bottom: 20px solid red;
     transform: rotate(180deg);
+}
+#player.thrust-fire:before {
+    left: -7px;
+    border-right-width: 7px;
+    border-left-width: 7px;
+    border-bottom: 14px solid red;
 }
 #player.thrust:after {
     content: '';
@@ -58,4 +64,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+.bullet {
+  border: 2px solid white;
+  position: absolute;
 }
