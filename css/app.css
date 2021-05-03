@@ -1,0 +1,61 @@
+body {
+  background: black;
+}
+#gameboard {
+  position: relative;
+  border: 1px solid white;
+  width: 800px;
+  height: 450px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+#player {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-right-width: 14px;
+  border-left-width: 14px;
+  border-bottom: 40px solid white;
+}
+#player.thrust:before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 40px;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 10px;
+    border-left-width: 10px;
+    border-bottom: 20px solid red;
+    transform: rotate(180deg);
+}
+#player.thrust:after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 40px;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 5px;
+    border-left-width: 5px;
+    border-bottom: 10px solid orange;
+    transform: rotate(180deg);
+}
+.asteroid {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  stroke-width: 1px;
+  animation: spin 64s infinite linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
