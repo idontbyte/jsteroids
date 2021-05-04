@@ -4,6 +4,7 @@ function Bullet(id, left, top, rotation, xVel, yVel) {
   this.Top = top + 20;
   this.XVel = xVel;
   this.YVel = yVel;
+  this.Remove = false;
   this.Rotation = rotation;
   this.Left += Math.cos((this.Rotation - 90) * Math.PI / 180) * 10;
   this.Top += Math.sin((this.Rotation - 90) * Math.PI / 180) * 10;

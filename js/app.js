@@ -10,6 +10,7 @@ J.App = {
         J.Player.UpdatePosition();
         J.Player.DrawBullets();
         J.Level.MoveAsteroids();
+        J.Level.CheckCollisions();
     },
 
     SetupControls: function () {

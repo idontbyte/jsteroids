@@ -72,7 +72,7 @@ J.Player = {
     DrawBullets: function () {
         // remove old bullets
         J.Player.Bullets = J.Player.Bullets.filter(function (e) { 
-            if (e.Id < J.Utilities.DateToTicks(new Date()) - 5000000) {
+            if (e.Id < J.Utilities.DateToTicks(new Date()) - 5000000 || e.Remove === true) {
                 document.getElementById(e.Id).remove();
                 return false;
             } else {
