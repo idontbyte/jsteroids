@@ -64,6 +64,7 @@ J.Player = {
         J.Player.Element.style.left = J.Player.Left + 'px';
         J.Player.Element.style.top = J.Player.Top + 'px';
         J.Player.Element.style.transform = 'rotate(' + J.Player.Rotation + 'deg)';
+        J.Utilities.ToggleClass(J.Player.Element, "above");
     },
 
     Logged: false,

@@ -23,6 +23,9 @@ html, body {
   border-left-width: 14px;
   border-bottom: 40px solid white;
 }
+#player.above {
+  z-index: 999;
+}
 #player.thrust:before {
     content: '';
     position: absolute;
