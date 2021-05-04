@@ -52,13 +52,13 @@ J.Player = {
 
         // screen wrap
         if (J.Player.Left < 0)
-            J.Player.Left += 800;
-        if (J.Player.Left > 800)
-            J.Player.Left -= 800;
+            J.Player.Left += J.App.Width();
+        if (J.Player.Left > J.App.Width())
+            J.Player.Left -= J.App.Width();
 
         if (J.Player.Top < 0)
-            J.Player.Top += 450;
-        if (J.Player.Top > 450)
+            J.Player.Top += J.App.Height();
+        if (J.Player.Top > J.App.Height())
             J.Player.Top = 0;
 
         J.Player.Element.style.left = J.Player.Left + 'px';
@@ -71,7 +71,7 @@ J.Player = {
     DrawBullets: function () {
         // remove old bullets
         J.Player.Bullets = J.Player.Bullets.filter(function (e) { 
-            if (e.Id < J.Utilities.DateToTicks(new Date()) - 7000000) {
+            if (e.Id < J.Utilities.DateToTicks(new Date()) - 5000000) {
                 document.getElementById(e.Id).remove();
                 return false;
             } else {
@@ -82,24 +82,23 @@ J.Player = {
         // move bullets
         J.Player.Bullets.forEach(function (b) {
             var bulletElement = document.getElementById(b.Id);
-            b.XVel += Math.cos((b.Rotation - 90) * Math.PI / 180) * .25;
-            b.YVel += Math.sin((b.Rotation - 90) * Math.PI / 180) * .25;
+            b.XVel += Math.cos((b.Rotation - 90) * Math.PI / 180) * .55;
+            b.YVel += Math.sin((b.Rotation - 90) * Math.PI / 180) * .55;
             b.Left += b.XVel;
             b.Top += b.YVel;
 
             if (b.Left < 0)
-                b.Left += 800;
-            if (b.Left > 800)
-                b.Left -= 800;
+                b.Left += J.App.Width();
+            if (b.Left > J.App.Width())
+                b.Left -= J.App.Width();
 
             if (b.Top < 0)
-                b.Top += 450;
-            if (b.Top > 450)
+                b.Top += J.App.Height();
+            if (b.Top > J.App.Height())
                 b.Top = 0;
 
             bulletElement.style.left = b.Left + 'px';
             bulletElement.style.top = b.Top + 'px';
-
         });
     }
 }

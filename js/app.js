@@ -5,10 +5,12 @@ J.App = {
     AsteroidDirection: 1,
     PressedKeys: [],
     Element_GameBoard: document.getElementById("gameboard"),
+    Width: function() { return J.App.Element_GameBoard.clientWidth },
+    Height: function() { return J.App.Element_GameBoard.clientHeight },
 
     ClientLoop: function () {
         J.App.AsteroidPosition += J.App.AsteroidDirection;
-        if (J.App.AsteroidPosition > 719)
+        if (J.App.AsteroidPosition > J.App.Width() - 1)
             J.App.AsteroidDirection = -1;
         if (J.App.AsteroidPosition < 1)
             J.App.AsteroidDirection = 1;
