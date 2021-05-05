@@ -33,12 +33,14 @@ J.Player = {
             // RIGHT
             J.Player.Rotation += 2;
         }
-        if (J.App.PressedKeys[32] === true) {
-            // SPAWN BULLET
-            if (J.Utilities.DateToTicks(J.Player.LastBulletFired) < J.Utilities.DateToTicks(new Date()) - 2000000) {
-                J.Player.LastBulletFired = new Date();
-                var bullet = new Bullet(J.Utilities.DateToTicks(new Date()), J.Player.Left, J.Player.Top, J.Player.Rotation, J.Player.XVel, J.Player.YVel);
-                J.Player.Bullets.push(bullet);
+        if (J.Level.Started) {
+            if (J.App.PressedKeys[32] === true) {
+                // SPAWN BULLET
+                if (J.Utilities.DateToTicks(J.Player.LastBulletFired) < J.Utilities.DateToTicks(new Date()) - 2000000) {
+                    J.Player.LastBulletFired = new Date();
+                    var bullet = new Bullet(J.Utilities.DateToTicks(new Date()), J.Player.Left, J.Player.Top, J.Player.Rotation, J.Player.XVel, J.Player.YVel);
+                    J.Player.Bullets.push(bullet);
+                }
             }
         }
 
@@ -71,7 +73,7 @@ J.Player = {
 
     DrawBullets: function () {
         // remove old bullets
-        J.Player.Bullets = J.Player.Bullets.filter(function (e) { 
+        J.Player.Bullets = J.Player.Bullets.filter(function (e) {
             if (e.Id < J.Utilities.DateToTicks(new Date()) - 5000000 || e.Remove === true) {
                 document.getElementById(e.Id).remove();
                 return false;

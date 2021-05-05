@@ -1,16 +1,31 @@
 var J = extend(true, {}, J);
 
 J.Level = {
-    CurrentLevel: 0,
+    CurrentLevel: 1,
     Asteroids: [],
     Explosions: [],
     SmallAsteroids: [],
+    Started: false,
 
     BeginLevel: function (number) {
-        J.Level.CurrentLevel = number;
-
         for (var i = 0; i < 10 + J.Level.CurrentLevel; i++) {
             setTimeout(J.Level.AddAsteroid, J.Utilities.RandomInt(0, 2000));
+        }
+    },
+
+    CheckStart() {
+        if (J.App.PressedKeys[13] === true && J.Level.Started === false) {
+            J.Level.Started = true;
+            J.Level.BeginLevel();
+            J.App.Element_Start.style.display = "none";
+        }
+    },
+
+    CheckEnd() {
+        if (J.Level.Started === true && J.Level.Asteroids.length === 0 && J.Level.SmallAsteroids.length === 0) {
+            J.Level.Started = false;
+            J.Level.CurrentLevel++;
+            J.App.Element_Start.style.display = "block";
         }
     },
 
@@ -35,6 +50,7 @@ J.Level = {
     },
 
     AddExplosion: function (x, y, rotation, speedX, speedY) {
+        J.App.Score += 10;
         var explosion = new Explosion(J.Utilities.DateToTicks(new Date()), x, y, rotation, speedX, speedY);
         J.Level.Explosions.push(explosion);
     },
@@ -161,7 +177,3 @@ J.Level = {
         }
     }
 }
-
-
-
-

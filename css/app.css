@@ -14,6 +14,24 @@ html, body {
   margin: 0;
   overflow: hidden;
 }
+#start {
+  margin: 20px auto;
+  border: 1px solid white;
+  padding: 20 40px;
+  color: white;
+  text-align: center;
+  width: 50%;
+  font-family: 'Courier New', monospace;
+}
+#scores {
+  padding: 20px;
+  position: absolute;
+  top: 10;
+  left: 0;
+  border: 1px solid white;
+  color: white;
+  font-family: 'Courier New', monospace;
+}
 #player {
   position: absolute;
   width: 0;
