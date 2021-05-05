@@ -14,7 +14,7 @@ function Explosion(id, left, top, rotation, speedX, speedY) {
         particleElement.querySelector('particle').style.left = this.Left + 'px';
         particleElement.querySelector('particle').style.top = this.Top + 'px';
         particleElement.querySelector('particle').setAttribute('data-rotation', i * 3.6);
-        particleElement.querySelector('particle').setAttribute('data-speed', J.Utilities.RandomInt(100,500));
+        particleElement.querySelector('particle').setAttribute('data-speed', J.Utilities.RandomInt(1,5));
         J.App.Element_GameBoard.appendChild(particleElement);
     }
 }

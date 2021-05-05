@@ -65,6 +65,10 @@ html, body {
   stroke-width: 1px;
   animation: spin 64s infinite linear;
 }
+.asteroid.small {
+  width: 30px;
+  height: 30px;
+}
 @keyframes spin {
   from {
     transform: rotate(0deg);

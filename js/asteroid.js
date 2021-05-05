@@ -1,4 +1,4 @@
-function Asteroid(id, left, top, rotation, variation, speedX, speedY) {
+function Asteroid(id, left, top, rotation, variation, speedX, speedY, cls) {
     this.Id = id;
     this.Left = left;
     this.Top = top;
@@ -16,5 +16,6 @@ function Asteroid(id, left, top, rotation, variation, speedX, speedY) {
     asteroidElement.querySelector('asteroid').setAttribute('id', this.Id);
     asteroidElement.querySelector('asteroid').style.left = this.Left + 'px';
     asteroidElement.querySelector('asteroid').style.top = this.Top + 'px';
+    asteroidElement.querySelector('asteroid').classList.add(cls);
     J.App.Element_GameBoard.appendChild(asteroidElement);
   }
